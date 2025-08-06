@@ -36,7 +36,7 @@ const ManageProduct = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/products");
+      const response = await axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/products");
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -65,7 +65,7 @@ const ManageProduct = () => {
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/products/${editProductId}`,
+        `https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/products/${editProductId}`,
         updatedData
       );
       
@@ -88,7 +88,7 @@ const ManageProduct = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/products/${id}`);
       setProducts(products.filter((product) => product._id !== id));
       showNotification("Product deleted successfully!", "success");
     } catch (error) {
