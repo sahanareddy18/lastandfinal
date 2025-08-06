@@ -32,7 +32,7 @@ const RackManagement = () => {
   const fetchRackData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/stocks/rack-management");
+      const response = await axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks/rack-management");
       const { data } = response.data;
       
       setRackGroups(data.rackGroups);
