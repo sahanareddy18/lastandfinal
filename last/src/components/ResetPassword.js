@@ -32,7 +32,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/check-password-strength', {
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/check-password-strength', {
         password
       });
       setPasswordStrength(response.data);
@@ -68,7 +68,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/reset-password', { 
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/reset-password', { 
         token,
         newPassword 
       });
