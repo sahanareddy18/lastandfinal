@@ -30,7 +30,7 @@ const ManagePurchase = () => {
 
   const fetchPurchases = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/purchases");
+      const response = await axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/purchases");
       const purchaseData = Array.isArray(response.data.data) ? response.data.data : [];
       setPurchases(purchaseData);
       setFilteredPurchases(purchaseData);
@@ -73,7 +73,7 @@ const ManagePurchase = () => {
     const updatedPurchase = filteredPurchases.find(purchase => purchase._id === id);
 
     try {
-      const response = await axios.put(`http://localhost:5000/api/purchases/${id}`, updatedPurchase);
+      const response = await axios.put(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/purchases/${id}`, updatedPurchase);
       setPurchases(prev => prev.map(p => (p._id === id ? response.data.data : p)));
       setFilteredPurchases(prev => prev.map(p => (p._id === id ? response.data.data : p)));
     } catch (error) {
@@ -83,7 +83,7 @@ const ManagePurchase = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/purchases/${id}`);
+      await axios.delete(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/purchases/${id}`);
       setPurchases(prev => prev.filter(p => p._id !== id));
       setFilteredPurchases(prev => prev.filter(p => p._id !== id));
     } catch (error) {
