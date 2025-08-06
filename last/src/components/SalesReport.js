@@ -16,7 +16,7 @@ const SalesReport = () => {
   useEffect(() => {
     const fetchSalesData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/sales');
+        const response = await axios.get('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/sales');
         console.log('API response:', response.data);
         
         // Ensure we're setting an array to the state
