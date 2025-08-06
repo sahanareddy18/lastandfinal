@@ -26,7 +26,7 @@ const ManageCustomer = () => {
 
   // Fetch customer data from the backend
   useEffect(() => {
-    axios.get("http://localhost:5000/api/customers")
+    axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/customers")
       .then((response) => {
         const customersWithDefaults = response.data.map((customer) => ({
           ...customer,
@@ -91,7 +91,7 @@ const handleUpdate = async (customerId) => {
   // Delete customer (frontend)
 const handleDelete = async (id) => {
   try {
-    await axios.delete(`http://localhost:5000/api/customers/${id}`);
+    await axios.delete(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/customers/${id}`);
     setCustomers(customers.filter((customer) => customer._id !== id));
   } catch (error) {
     console.error("Error deleting customer:", error);
