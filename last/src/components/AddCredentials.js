@@ -49,7 +49,7 @@ const AddCredentials = () => {
       // Always set role as 'user' - no admin option
       const role = 'user';
       
-      await axios.post('http://localhost:5000/api/auth/register', { 
+      await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/register', { 
         username, 
         email, 
         password, 
