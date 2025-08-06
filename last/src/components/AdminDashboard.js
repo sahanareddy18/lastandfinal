@@ -64,10 +64,10 @@ const ManageProductStock = () => {
     setLoading(true);
     try {
       const [stocksRes, purchasesRes, salesRes, productsRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/stocks"),
-        axios.get("http://localhost:5000/api/purchases"),
-        axios.get("http://localhost:5000/api/sales"),
-        axios.get("http://localhost:5000/api/products")
+        axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks"),
+        axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/purchases"),
+        axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/sales"),
+        axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/products")
       ]);
       
       // Process data with defensive checks to handle potentially malformed responses
@@ -202,7 +202,7 @@ const ManageProductStock = () => {
   // CRUD Operations
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/stocks/${id}`);
+      await axios.delete(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks/${id}`);
       setStockProducts(prev => prev.filter(product => product._id !== id));
       message.success('Item deleted successfully');
     } catch (error) {
@@ -227,7 +227,7 @@ const ManageProductStock = () => {
       return;
     }
     try {
-      await axios.put(`http://localhost:5000/api/stocks/${editId}`, editedProduct);
+      await axios.put(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks/${editId}`, editedProduct);
       setStockProducts(prev => prev.map(prod => 
         prod._id === editId ? editedProduct : prod
       ));
