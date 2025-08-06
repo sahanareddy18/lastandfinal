@@ -30,7 +30,7 @@ const ChangeAdminCredentials = () => {
 
     try {
       // First, check if the email belongs to an admin
-      const adminCheckResponse = await axios.post('http://localhost:5000/api/auth/check-admin-email', {
+      const adminCheckResponse = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/check-admin-email', {
         email: email
       });
 
@@ -42,7 +42,7 @@ const ChangeAdminCredentials = () => {
       }
 
       // If email belongs to admin, send password reset email
-      const response = await axios.post('http://localhost:5000/api/auth/forgot-password', {
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/forgot-password', {
         email: email
       });
 
