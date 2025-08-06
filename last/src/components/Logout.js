@@ -9,7 +9,7 @@ const Logout = () => {
     const logoutUser = async () => {
       try {
         // Optional: Call backend logout endpoint if you're using token invalidation
-        await axios.post('http://localhost:5000/api/auth/logout', {}, {
+        await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/logout', {}, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
