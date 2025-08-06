@@ -53,7 +53,7 @@ const AddSupplier = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/suppliers", 
+        "https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/suppliers", 
         supplierData,
         {
           headers: {
