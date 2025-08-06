@@ -214,7 +214,7 @@ const AddPurchase = ({ fetchStock }) => {
         setIsLoadingSuggestions(true);
         // Search by both name and contact number
         const response = await axios.get(
-          `http://localhost:5000/api/suppliers?search=${query}`
+          `https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/suppliers?search=${query}`
         );
         
         setSuggestions(response.data);
@@ -236,7 +236,7 @@ const AddPurchase = ({ fetchStock }) => {
   
       try {
         setIsLoadingProductSuggestions(true);
-        const response = await axios.get(`http://localhost:5000/api/products?search=${query}`);
+        const response = await axios.get(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/products?search=${query}`);
         
         const filteredProducts = response.data.filter(product => 
           product.productName && product.productName.toLowerCase().includes(query.toLowerCase())
@@ -334,7 +334,7 @@ const AddPurchase = ({ fetchStock }) => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/purchases/add", purchaseData);
+      const response = await axios.post("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/purchases/add", purchaseData);
       alert("Purchase added successfully!");
 
       if (fetchStock) {
@@ -438,7 +438,7 @@ const AddPurchase = ({ fetchStock }) => {
   
 
     try {
-      const response = await axios.post("http://localhost:5000/api/suppliers", supplierData);
+      const response = await axios.post("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/suppliers", supplierData);
       if (response.status === 201) {
         alert("Supplier added successfully!");
         setNewSupplierName("");
