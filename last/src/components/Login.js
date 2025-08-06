@@ -25,7 +25,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/check-admin-email', {
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/check-admin-email', {
         email: emailValue
       });
       setShowForgotPassword(response.data.isAdmin);
@@ -52,7 +52,7 @@ const Login = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { 
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/login', { 
         email, 
         password 
       });
