@@ -28,7 +28,7 @@ const ManageProductStock = () => {
   const fetchStock = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/stocks");
+      const response = await axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks");
       setProducts(response.data.data || []);
     } catch (error) {
       setError("Error fetching stock data.");
@@ -44,7 +44,7 @@ const ManageProductStock = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/stocks/${id}`);
+      await axios.delete(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks/${id}`);
       setProducts((prev) => prev.filter((product) => product._id !== id));
     } catch (error) {
       console.error("Error deleting product:", error);
@@ -67,7 +67,7 @@ const ManageProductStock = () => {
       return;
     }
     try {
-      await axios.put(`http://localhost:5000/api/stocks/${editId}`, editedProduct);
+      await axios.put(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks/${editId}`, editedProduct);
       setProducts((prev) => prev.map((prod) => (prod._id === editId ? editedProduct : prod)));
       setEditId(null);
       setEditedProduct({});
@@ -91,7 +91,7 @@ const ManageProductStock = () => {
   const updateDiscounts = async () => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:5000/api/stocks/update-discounts");
+      await axios.post("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks/update-discounts");
       message.success("Discounts updated successfully!");
       fetchStock(); // Refresh the stock data
     } catch (error) {
