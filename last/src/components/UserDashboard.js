@@ -34,7 +34,7 @@ const UserDashboard = () => {
   useEffect(() => {
     const fetchStocks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/stocks');
+        const response = await axios.get('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks');
         setStocks(response.data.data || []);
         setLoading(false);
       } catch (error) {
@@ -83,7 +83,7 @@ const UserDashboard = () => {
   
   const handleSaveEdit = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/stocks/${id}`, editFormData);
+      await axios.put(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks/${id}`, editFormData);
       const updatedStocks = stocks.map(item => 
         item._id === id ? { ...item, ...editFormData } : item
       );
@@ -105,7 +105,7 @@ const UserDashboard = () => {
   };
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/stocks/${id}`);
+      await axios.delete(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks/${id}`);
       setStocks(stocks.filter(item => item._id !== id));
       message.success('Item deleted successfully');
     } catch (error) {
