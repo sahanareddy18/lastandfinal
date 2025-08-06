@@ -18,7 +18,7 @@ const PurchaseReport = () => {
     const fetchPurchaseData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:5000/api/purchases');
+        const response = await axios.get('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/purchases');
         
         // Data normalization with enhanced error handling
         const data = response?.data?.data || response?.data || [];
