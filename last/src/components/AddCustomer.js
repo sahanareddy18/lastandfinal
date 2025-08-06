@@ -52,7 +52,7 @@ const AddCustomer = () => {
     if (validateForm()) {
       try {
         console.log("Submitting:", formData); // Debugging
-        const response = await axios.post("http://localhost:5000/api/customers/add", formData, {
+        const response = await axios.post("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/customers/add", formData, {
           headers: { "Content-Type": "application/json" }
         });
 
