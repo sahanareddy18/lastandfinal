@@ -1,0 +1,370 @@
+.chatbot-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.chatbot-card .ant-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow: hidden;
+}
+
+/* Insights Section */
+.insights-section {
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.insights-section .ant-statistic {
+  text-align: center;
+}
+
+.insights-section .ant-statistic-title {
+  font-size: 12px;
+  color: #666;
+}
+
+.insights-section .ant-statistic-content {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Quick Actions */
+.quick-actions {
+  margin-bottom: 16px;
+}
+
+.quick-actions .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Context Selector */
+.context-selector {
+  margin-bottom: 16px;
+  padding: 8px 0;
+}
+
+/* Messages Container */
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 0;
+  max-height: 400px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  background: #fafafa;
+  margin-bottom: 16px;
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Message Styling */
+.message {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  max-width: 80%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-message {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.ai-message {
+  background: white;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-header {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.user-message .message-header {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ai-message .message-header {
+  color: #666;
+}
+
+.message-content {
+  line-height: 1.6;
+}
+
+.user-message .message-content {
+  color: white;
+}
+
+.ai-message .message-content {
+  color: #333;
+}
+
+/* Icons */
+.ai-icon {
+  color: #1890ff;
+  font-size: 16px;
+}
+
+.user-icon {
+  color: white;
+  font-size: 16px;
+}
+
+/* Markdown Content */
+.ai-message .message-content h1,
+.ai-message .message-content h2,
+.ai-message .message-content h3,
+.ai-message .message-content h4,
+.ai-message .message-content h5,
+.ai-message .message-content h6 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.ai-message .message-content p {
+  margin-bottom: 8px;
+}
+
+.ai-message .message-content ul,
+.ai-message .message-content ol {
+  margin-bottom: 8px;
+  padding-left: 20px;
+}
+
+.ai-message .message-content li {
+  margin-bottom: 4px;
+}
+
+.ai-message .message-content code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.ai-message .message-content pre {
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 8px 0;
+}
+
+.ai-message .message-content blockquote {
+  border-left: 4px solid #1890ff;
+  padding-left: 16px;
+  margin: 8px 0;
+  color: #666;
+  font-style: italic;
+}
+
+.ai-message .message-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.ai-message .message-content th,
+.ai-message .message-content td {
+  border: 1px solid #e8e8e8;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.ai-message .message-content th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+/* Input Area */
+.input-area {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.input-area .ant-input {
+  border-radius: 8px 0 0 8px;
+  border-right: none;
+  resize: none;
+}
+
+.input-area .ant-btn {
+  border-radius: 0 8px 8px 0;
+  height: auto;
+  padding: 8px 16px;
+}
+
+/* Loading Animation */
+.ai-message .ant-spin {
+  margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chatbot-container {
+    padding: 10px;
+  }
+  
+  .chatbot-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .message {
+    max-width: 90%;
+  }
+  
+  .insights-section .ant-col {
+    margin-bottom: 8px;
+  }
+  
+  .quick-actions .ant-space {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .quick-actions .ant-btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .chatbot-card {
+    background: #1f1f1f;
+    color: #fff;
+  }
+  
+  .ai-message {
+    background: #2a2a2a;
+    border-color: #404040;
+    color: #fff;
+  }
+  
+  .messages-container {
+    background: #1a1a1a;
+    border-color: #404040;
+  }
+  
+  .ai-message .message-content code {
+    background: #333;
+    color: #fff;
+  }
+  
+  .ai-message .message-content pre {
+    background: #2a2a2a;
+    border-color: #404040;
+  }
+  
+  .ai-message .message-content th {
+    background: #333;
+    color: #fff;
+  }
+  
+  .ai-message .message-content td {
+    border-color: #404040;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+.messages-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation for new messages */
+.message {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects */
+.quick-actions .ant-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.ai-message:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease;
+} 

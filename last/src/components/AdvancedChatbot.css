@@ -1,0 +1,552 @@
+.advanced-chatbot-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.advanced-chatbot-card {
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.advanced-chatbot-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.insights-section {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.insights-section .ant-statistic-title {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.insights-section .ant-statistic-content {
+  color: white !important;
+}
+
+.quick-actions {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  backdrop-filter: blur(10px);
+}
+
+.quick-actions .ant-btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.quick-actions .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.context-selector {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 16px 0;
+}
+
+.messages-container {
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.message {
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-message {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-left: 20px;
+  position: relative;
+}
+
+.ai-message::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #667eea;
+}
+
+.user-message {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  margin-right: 20px;
+  position: relative;
+}
+
+.user-message::before {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #4facfe;
+}
+
+.message-header {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-icon {
+  color: #ffd700;
+  font-size: 18px;
+  animation: pulse 2s infinite;
+}
+
+.user-icon {
+  color: #00f2fe;
+  font-size: 18px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.message-content {
+  line-height: 1.6;
+}
+
+.message-content h1,
+.message-content h2,
+.message-content h3,
+.message-content h4,
+.message-content h5,
+.message-content h6 {
+  color: inherit;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.message-content p {
+  margin-bottom: 8px;
+}
+
+.message-content ul,
+.message-content ol {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+.message-content li {
+  margin-bottom: 4px;
+}
+
+.message-content code {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.message-content pre {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 8px 0;
+}
+
+.message-analysis {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.input-area {
+  margin-top: 16px;
+}
+
+.input-area .ant-input {
+  border-radius: 8px 0 0 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #333;
+}
+
+.input-area .ant-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.input-area .ant-btn {
+  border-radius: 0 8px 8px 0;
+  height: auto;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  font-weight: 500;
+}
+
+.input-area .ant-btn:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-1px);
+}
+
+/* Advanced Features */
+.advanced-features {
+  margin-bottom: 20px;
+}
+
+.advanced-features .ant-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.advanced-features .ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Drawer Styles */
+.ant-drawer-content {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.ant-drawer-header {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ant-drawer-title {
+  color: white;
+}
+
+.ant-drawer-close {
+  color: white;
+}
+
+.ant-drawer-body {
+  color: white;
+}
+
+/* Timeline Styles */
+.ant-timeline-item-content {
+  color: white;
+}
+
+.ant-timeline-item-head {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Progress Bar */
+.ant-progress-bg {
+  background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+}
+
+/* Badge Styles */
+.ant-badge-count {
+  background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+  box-shadow: 0 2px 8px rgba(82, 196, 26, 0.3);
+}
+
+/* Modal Styles */
+.ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ant-modal-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.ant-modal-title {
+  color: white;
+}
+
+.ant-modal-close {
+  color: white;
+}
+
+/* Alert Styles */
+.ant-alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.ant-alert-success {
+  background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+  color: white;
+}
+
+.ant-alert-error {
+  background: linear-gradient(135deg, #ff4d4f 0%, #ff7875 100%);
+  color: white;
+}
+
+.ant-alert-warning {
+  background: linear-gradient(135deg, #faad14 0%, #ffc53d 100%);
+  color: white;
+}
+
+/* List Styles */
+.ant-list-item {
+  border-radius: 6px;
+  margin-bottom: 4px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Select Styles */
+.ant-select-selector {
+  border-radius: 6px !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+
+.ant-select-focused .ant-select-selector {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Slider Styles */
+.ant-slider-track {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.ant-slider-handle {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+/* Switch Styles */
+.ant-switch-checked {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Tabs Styles */
+.ant-tabs-tab {
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+}
+
+.ant-tabs-tab:hover {
+  color: white;
+}
+
+.ant-tabs-tab-active {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ant-tabs-ink-bar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .advanced-chatbot-container {
+    padding: 10px;
+  }
+  
+  .insights-section .ant-col {
+    margin-bottom: 16px;
+  }
+  
+  .quick-actions .ant-space {
+    flex-direction: column;
+  }
+  
+  .quick-actions .ant-btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .message {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .ai-message {
+    margin-left: 10px;
+  }
+  
+  .user-message {
+    margin-right: 10px;
+  }
+}
+
+/* Loading Animation */
+.ant-spin-dot {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Typography Enhancements */
+.ant-typography h1,
+.ant-typography h2,
+.ant-typography h3,
+.ant-typography h4,
+.ant-typography h5,
+.ant-typography h6 {
+  color: inherit;
+  font-weight: 600;
+}
+
+/* Button Enhancements */
+.ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.ant-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ant-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.ant-btn-danger {
+  background: linear-gradient(135deg, #ff4d4f 0%, #ff7875 100%);
+  border: none;
+}
+
+.ant-btn-danger:hover {
+  background: linear-gradient(135deg, #ff3333 0%, #ff6666 100%);
+}
+
+/* Card Enhancements */
+.ant-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Divider Enhancements */
+.ant-divider {
+  border-color: rgba(255, 255, 255, 0.2);
+  margin: 16px 0;
+}
+
+/* Space Enhancements */
+.ant-space {
+  gap: 12px !important;
+}
+
+/* Tag Enhancements */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Tooltip Enhancements */
+.ant-tooltip-inner {
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+/* Collapse Enhancements */
+.ant-collapse {
+  background: transparent;
+  border: none;
+}
+
+.ant-collapse-item {
+  border: none;
+  margin-bottom: 8px;
+}
+
+.ant-collapse-header {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+}
+
+.ant-collapse-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0 0 8px 8px;
+  color: white;
+}
+
+.ant-collapse-content-box {
+  color: white;
+} 
