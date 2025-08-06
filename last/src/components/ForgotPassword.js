@@ -29,7 +29,7 @@ const ForgotPassword = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/forgot-password', { 
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/forgot-password', { 
         email: emailAddress 
       });
       
