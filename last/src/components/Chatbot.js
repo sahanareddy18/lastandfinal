@@ -94,7 +94,7 @@ How can I help you today?`,
 
   const loadInsights = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/chatbot/insights');
+      const response = await axios.get('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/chatbot/insights');
       if (response.data.success) {
         setInsights(response.data.insights);
       }
@@ -118,7 +118,7 @@ How can I help you today?`,
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/chatbot/chat', {
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/chatbot/chat', {
         message: inputMessage,
         context: context
       });
@@ -145,7 +145,7 @@ How can I help you today?`,
   const handleGenerateReport = async (reportType) => {
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/chatbot/reports', {
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/chatbot/reports', {
         reportType: reportType
       });
 
@@ -188,7 +188,7 @@ ${JSON.stringify(response.data.reportData, null, 2)}`,
 
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/chatbot/drug-interactions', {
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/chatbot/drug-interactions', {
         medications: validMedications
       });
 
