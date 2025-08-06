@@ -36,7 +36,7 @@ const ManageSupplier = () => {
   const fetchSuppliers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/suppliers");
+      const response = await axios.get("https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/suppliers");
       setSuppliers(response.data);
     } catch (error) {
       console.error("Error fetching suppliers:", error);
@@ -102,7 +102,7 @@ const ManageSupplier = () => {
   // Delete supplier
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/suppliers/${id}`);
+      await axios.delete(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/suppliers/${id}`);
       setSuppliers(suppliers.filter((supplier) => supplier._id !== id));
     } catch (error) {
       console.error("Error deleting supplier:", error);
