@@ -30,7 +30,7 @@ const ManageInvoice = () => {
   const fetchInvoices = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/api/sales`, {
+      const response = await axios.get(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/sales`, {
         params: { page, limit, search },
       });
 
@@ -68,7 +68,7 @@ const ManageInvoice = () => {
           expiryDate: item.expiryDate.toDate()
         }))
       };
-      await axios.put(`http://localhost:5000/api/sales/${editedInvoice._id}`, dataToSend);
+      await axios.put(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/sales/${editedInvoice._id}`, dataToSend);
       fetchInvoices();
     } catch (error) {
       console.error("Error updating invoice:", error);
@@ -112,7 +112,7 @@ const ManageInvoice = () => {
 
   const handleDelete = async (invoiceId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/sales/${invoiceId}`);
+      await axios.delete(`https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/sales/${invoiceId}`);
       fetchInvoices();
     } catch (error) {
       console.error("Error deleting invoice:", error);
