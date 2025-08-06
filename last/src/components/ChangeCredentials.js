@@ -36,7 +36,7 @@ const ChangeCredentials = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/change-password', {
+      const response = await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/auth/change-password', {
         email: email,
         currentPassword: '', // Not needed for admin reset
         newPassword: newPassword
