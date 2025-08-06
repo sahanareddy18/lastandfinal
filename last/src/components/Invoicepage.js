@@ -75,7 +75,7 @@ const InvoicePage = () => {
   useEffect(() => {
     const fetchStockData = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/stocks');
+        const { data } = await axios.get('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/stocks');
         const formattedData = data.data.map(item => {
           // Check if this item qualifies for expiry discount
           const expiryDiscount = checkExpiryDiscount(item.expiryDate, item.mrp);
@@ -120,7 +120,7 @@ const InvoicePage = () => {
   const fetchCustomerSuggestions = async (query) => {
     setIsLoading(true);
     try {
-      const { data } = await axios.get('http://localhost:5000/api/customers/search', {
+      const { data } = await axios.get('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/customers/search', {
         params: { contact: query },
       });
       setSuggestions(data);
@@ -354,7 +354,7 @@ const InvoicePage = () => {
         redeemedPoints: actualRedeemedPoints || 0
       };
 
-      await axios.post('http://localhost:5000/api/sales', saleData);
+      await axios.post('https://pharmacystockmanagmentandbillingsystemba.onrender.com/api/sales', saleData);
       
       setNotification('Sale completed successfully!');
       setTimeout(() => setNotification(''), 3000);
